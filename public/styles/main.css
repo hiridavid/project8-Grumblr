@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root{
+  --c-main: #597E52;
+  --c-main-subtle: #384935;
+  --c-alert: #C6A969;
+  --c-alert-subtle: #64522c;
+  --c-dark: #273329;
+  --c-dark-subtle: #161616;
+  --c-light: #FFFFEC;
+  --c-highlight: #F1E4C3;
+  font-size: 12pt;
+  
+}
+
+body{
+  font-family: 'Lexend', Tahoma, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+
+  background-color: var(--c-dark);
+  color: var(--c-light);
+
+}
+
+a{
+  color: var(--c-alert);
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:active{
+  color: var(--c-alert-subtle)
+}
+
+h1, h2, h3{
+  font-family: 'Oswald', 'Arial Narrow Bold', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
