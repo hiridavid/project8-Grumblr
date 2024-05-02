@@ -44,3 +44,58 @@ h1, h2, h3{
   font-weight: 700;
   font-style: normal;
 }
+
+header{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+article.post{
+  background-color: var(--c-main);
+  border-bottom: 2px solid var(--c-alert);
+  border-top: 2px solid var(--c-alert);
+  border-radius: 6px;
+  
+}
+
+article.post > img{
+  width:100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+article.post p.tags{
+  color: var(--c-main-subtle);
+  font-size: 0.8rem;
+
+}
+
+article.post > section.text-content{
+  padding: 1rem;
+}
+
+img.profile-img{
+  border-radius: 50%;
+  border: 2px solid var(--c-light);
+  
+  width: 3rem;
+  height: 3rem;
+}
+article.post section.interact{
+  padding: 1rem;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+article.post section.interact input.follow-btn{
+  background: transparent;
+  border: 1px solid var(--c-light);
+  border-radius: 25% / 50%;
+  padding: .2rem .6rem;
+}
