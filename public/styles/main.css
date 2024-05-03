@@ -10,6 +10,8 @@
   --c-dark-subtle: #161616;
   --c-light: #FFFFEC;
   --c-highlight: #F1E4C3;
+
+  --c-liked: #dfa3a4;
   font-size: 12pt;
   
 }
@@ -53,49 +55,86 @@ header{
   padding-bottom: 1rem;
 }
 
-article.post{
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1rem;
+  max-width: calc(100vw - 2rem);
+}
+
+article.POST{
   background-color: var(--c-main);
   border-bottom: 2px solid var(--c-alert);
   border-top: 2px solid var(--c-alert);
+  border-left: none;
+  border-right: none;
   border-radius: 6px;
-  
+  color: var(--c-light);
 }
 
-article.post > img{
+article.POST > img{
   width:100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-article.post p.tags{
-  color: var(--c-main-subtle);
-  font-size: 0.8rem;
+article.POST p.TAGS{
+  color: var(--c-light);
+  font-size: 0.9rem;
+  opacity: 0.5;
 
 }
 
-article.post > section.text-content{
+/* article.POST section.TEXT-CONTENT{
   padding: 1rem;
-}
+} */
 
-img.profile-img{
+img.PROFILE-IMG{
   border-radius: 50%;
   border: 2px solid var(--c-light);
   
   width: 3rem;
   height: 3rem;
 }
-article.post section.interact{
+/* article.POST section.INTERACT{
   padding: 1rem;
   display:flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   
+} */
+
+article.POST form{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  
 }
 
-article.post section.interact input.follow-btn{
+article.POST input.FOLLOW-BTN{
+  font-size: 0.5rem;
   background: transparent;
   border: 1px solid var(--c-light);
-  border-radius: 25% / 50%;
+  border-radius: 24% / 50%;
   padding: .2rem .6rem;
+  color: var(--c-light);
+}
+
+article.POST div.LIKE-BTN{
+  align-self: stretch;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  /* border: 1px solid yellow; */
+}
+
+/* article.POST img.LIKE-BTN-LIKED{
+  color: red;
+} */
+
+article.POST img.like-button-img{
+  width: 6vw;
+  /* background-color: red; */
 }

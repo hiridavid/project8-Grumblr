@@ -1,0 +1,42 @@
+<% locals.posts.forEach(post => { %>
+
+<article class="card POST">
+  <img src="<%= post.coverImageURL %>" class="card-img-top" alt="Card Image">
+  <section class="card-body">
+
+    <% if (post.cardTitle) { %>
+     <h1 class="card-title"><%= post.cardTitle %></h1>
+    <% } %>
+
+    <% if (post.cardText) { %>
+      <p class="card-text"><%= post.cardText %></p>
+    <% } %>
+
+    <% if (post.tags) { %>
+      <p class="TAGS">
+        <% post.tags.forEach(tag => { %>
+          <span id="<%= tag %>">#<%= tag %></span>
+        <% }) %>
+      </p>
+    <% } %>
+    
+    <div class="INTERACT d-flex justify-content-between align-items-center">
+      <div class="USER d-flex align-items-center gap-2">
+        <img src="<%= post.profilePictureURL %>" alt="Profile Picture" class="PROFILE-IMG">
+        <span class="USERNAME ml-2"><%= post.username %></span>
+        <form action="/profile" method="GET">
+          <input class="FOLLOW-BTN" type="submit" value="Follow">
+        </form>
+      </div>
+      <div class="LIKE-BTN d-flex flex-column justify-content-around align-items-center">
+        <img src="img/chat-square-heart.svg" alt="Like Button" class="like-button-img <% if (post.liked) { %>LIKE-BTN-LIKED<% } %>">
+        <% if (post.liked) { %>
+          <span class="like-count ml-2"><%= post.likeCounter %></span>
+        <% } %>
+        
+      </div>
+    </div>
+  </section>
+</article>
+
+<% }) %>
