@@ -1,0 +1,31 @@
+nav{
+  background: linear-gradient(0deg, 
+  rgba(0,0,0,0.5) 0%,
+  rgba(0,0,0,0.2) 5%,
+  rgba(0,0,0,0) 30%, 
+  rgba(0,0,0,0) 100%),
+  var(--c-main);
+
+  border-bottom: 3px solid var(--c-alert);
+}
+
+nav input[type="search"]:focus{
+  border: 2px solid var(--c-alert);
+
+  box-shadow: 0 0 0 .2rem rgba(198, 168, 105, 0.4);
+}
+
+
+/* nav input[type="search"]:after{
+  content: " ";
+  background: url("img/search.svg") no-repeat;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: relative;
+  top: 7px;
+  right: 7px;
+} */
+
+

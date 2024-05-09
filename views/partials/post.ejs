@@ -15,16 +15,16 @@
     <% if (post.tags) { %>
       <p class="TAGS">
         <% post.tags.forEach(tag => { %>
-          <span id="<%= tag %>">#<%= tag %></span>
+          <a id="<%= tag %>" href="#<%= tag %>">#<%= tag %></a>
         <% }) %>
       </p>
     <% } %>
     
     <div class="INTERACT d-flex justify-content-between align-items-center">
       <div class="USER d-flex align-items-center gap-2">
-        <img src="<%= post.profilePictureURL %>" alt="Profile Picture" class="PROFILE-IMG">
+        <img src="<%= post.profilePictureURL %>" alt="Profile Picture" class="PROFILE-IMG HIGHLIGHT">
         <span class="USERNAME ml-2"><%= post.username %></span>
-        <form action="/profile" method="GET">
+        <form action="/profile" method="POST">
           <input class="FOLLOW-BTN" type="submit" value="Follow">
         </form>
       </div>

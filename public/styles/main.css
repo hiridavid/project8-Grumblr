@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import 'header.css';
 
 :root{
   --c-main: #597E52;
@@ -80,11 +81,19 @@ article.POST > img{
   border-top-right-radius: 5px;
 }
 
-article.POST p.TAGS{
+article.POST p.TAGS a{
   color: var(--c-light);
   font-size: 0.9rem;
   opacity: 0.5;
+  text-decoration: none;
 
+  padding-top: 500px;
+  margin-top: -500px;
+}
+
+article.POST p.TAGS a:hover{
+  text-decoration: underline;
+  transition: all 1s 0s;
 }
 
 /* article.POST section.TEXT-CONTENT{
@@ -137,4 +146,8 @@ article.POST div.LIKE-BTN{
 article.POST img.like-button-img{
   width: 6vw;
   /* background-color: red; */
+}
+
+.HIGHLIGHT:hover{
+  box-shadow: 0 0 4px 2px var(--c-highlight);
 }
