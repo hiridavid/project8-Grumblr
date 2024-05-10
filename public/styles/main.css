@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import 'header.css';
+@import 'footer.css';
+@import 'hovers.css';
 
 :root{
   --c-main: #597E52;
@@ -48,14 +50,6 @@ h1, h2, h3{
   font-style: normal;
 }
 
-header{
-  display:flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 0.5rem;
-  padding-bottom: 1rem;
-}
-
 main {
   display: flex;
   flex-flow: column nowrap;
@@ -86,9 +80,19 @@ article.POST p.TAGS a{
   font-size: 0.9rem;
   opacity: 0.5;
   text-decoration: none;
+}
 
-  padding-top: 500px;
-  margin-top: -500px;
+article.POST .PSEUDO-TAG{
+  visibility: hidden;
+
+  /* 
+  height: 0;
+  width: 0; 
+  z-index: -1;
+  */
+
+  position: relative;
+  bottom: 100px;
 }
 
 article.POST p.TAGS a:hover{
@@ -123,8 +127,8 @@ article.POST form{
   
 }
 
-article.POST input.FOLLOW-BTN{
-  font-size: 0.5rem;
+article.POST .FOLLOW-BTN{
+  font-size: 0.7rem;
   background: transparent;
   border: 1px solid var(--c-light);
   border-radius: 24% / 50%;
@@ -148,6 +152,7 @@ article.POST img.like-button-img{
   /* background-color: red; */
 }
 
-.HIGHLIGHT:hover{
-  box-shadow: 0 0 4px 2px var(--c-highlight);
+article.POST .fa-heart[data-prefix="fas"]{
+  color: var(--c-liked);
 }
+

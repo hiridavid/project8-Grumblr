@@ -1,6 +1,13 @@
 <% locals.posts.forEach(post => { %>
 
 <article class="card POST">
+
+  <% if (post.tags) { %>
+    <% post.tags.forEach(tag => { %>
+      <span id="<%= tag %>" class="PSEUDO-TAG"></span>
+    <% }) %>
+  <% } %>
+
   <img src="<%= post.coverImageURL %>" class="card-img-top" alt="Card Image">
   <section class="card-body">
 
@@ -15,7 +22,7 @@
     <% if (post.tags) { %>
       <p class="TAGS">
         <% post.tags.forEach(tag => { %>
-          <a id="<%= tag %>" href="#<%= tag %>">#<%= tag %></a>
+          <a href="#<%= tag %>">#<%= tag %></a>
         <% }) %>
       </p>
     <% } %>
@@ -25,11 +32,20 @@
         <img src="<%= post.profilePictureURL %>" alt="Profile Picture" class="PROFILE-IMG HIGHLIGHT">
         <span class="USERNAME ml-2"><%= post.username %></span>
         <form action="/profile" method="POST">
-          <input class="FOLLOW-BTN" type="submit" value="Follow">
+          <!-- <input class="FOLLOW-BTN" type="submit" value="Follow"> -->
+          <button class="FOLLOW-BTN" type="submit"><i class="fa-solid fa-shoe-prints fa-rotate-by" style="--fa-rotate-angle: -60deg;"></i>Follow</button>
         </form>
       </div>
       <div class="LIKE-BTN d-flex flex-column justify-content-around align-items-center">
-        <img src="img/chat-square-heart.svg" alt="Like Button" class="like-button-img <% if (post.liked) { %>LIKE-BTN-LIKED<% } %>">
+        <i class="fa-heart fa-lg 
+          <% if (post.liked) { %>
+            fa-solid
+          <% } else { %>
+            fa-regular
+          <% } %>
+          "></i>
+
+        <!-- <img src="img/chat-square-heart.svg" alt="Like Button" class="like-button-img <% if (post.liked) { %>LIKE-BTN-LIKED<% } %>"> -->
         <% if (post.liked) { %>
           <span class="like-count ml-2"><%= post.likeCounter %></span>
         <% } %>
@@ -40,3 +56,10 @@
 </article>
 
 <% }) %>
+
+<div class="END-OF-FEED">
+  <i class="fa-solid fa-heart-crack fa-2xl"></i>
+  
+  <h3>Oops. That's all for today!</h3>
+  Better go outside and touch some grass.
+</div>

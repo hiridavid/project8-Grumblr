@@ -1,12 +1,21 @@
+header{
+  border-top: 1px solid var(--c-light);
+  border-bottom: 1px solid var(--c-light);
+  margin: 1rem 25vw;
+}
+
 nav{
-  background: linear-gradient(0deg, 
+  background: var(--c-main);
+  /* linear-gradient(0deg, 
   rgba(0,0,0,0.5) 0%,
   rgba(0,0,0,0.2) 5%,
   rgba(0,0,0,0) 30%, 
   rgba(0,0,0,0) 100%),
-  var(--c-main);
+  var(--c-main); */
 
   border-bottom: 3px solid var(--c-alert);
+
+  box-shadow: 0 5px 10px 0px var(--c-dark);
 }
 
 nav input[type="search"]:focus{

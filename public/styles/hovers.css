@@ -1,0 +1,3 @@
+.HIGHLIGHT:hover{
+  box-shadow: 0 0 4px 2px var(--c-highlight);
+}

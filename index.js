@@ -30,6 +30,18 @@ let indexPackage = {
       liked: true,
       likeCounter: ~~(Math.random() * 30 + 20),
     },
+    {
+      coverImageURL: "https://picsum.photos/600/400",
+      cardTitle: "I HATE THE MINES SO MUCH",
+      cardText:
+        "ITS ALL JUST DIRT AND STONE AND SMOKE AND COAL AND DEBRIS AND SAND AND DIRT AND DAMPNESS AND ANTS AND DIRT AND SWEAT AND WORK AND MEN AND DIRT AN",
+      tags: ["HATETHEMINES", "HATEMINES", "MINEHATERS", "hateposting"],
+      profilePictureURL:
+        "https://img.atlasobscura.com/toSoOVA87YqDCQzma3FRoO2dKER6QkxicsOWaEsCGkA/rs:fill:780:520:1/g:ce/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy85Nzk3YTZiZC03/NTI4LTRjNjItYjZj/MC0wYjkwMDM3M2Yw/NzhhNzA3YTNiYzY2/YWVlMDYzNzhfR2lt/bGkgaW4gVEhFIExP/UkQgT0YgVEhFIFJJ/TkdTX1RIRSBUV08g/VE9XRVJTX1JZQ0sx/OC5qcGc.jpg",
+      username: "minehater29",
+      liked: true,
+      likeCounter: ~~(Math.random() * 30 + 20),
+    },
   ],
 };
 
