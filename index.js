@@ -1,9 +1,10 @@
 import express from "express";
+import fs from "fs";
 
 const app = express();
 const port = 3000;
 
-let indexPackage = {
+let onLoadPackage = {
   posts: [
     {
       coverImageURL:
@@ -45,11 +46,44 @@ let indexPackage = {
   ],
 };
 
+function test() {
+  fs.writeFileSync(
+    "./data/posts.json",
+    JSON.stringify(onLoadPackage),
+    (error) => {
+      if (error) throw error;
+    }
+  );
+
+  return fs.readFileSync("./data/posts.json", "utf8");
+
+  /* , "utf8", (error, data) => {
+    if (error) throw error;
+
+    onLoadPackage = JSON.parse(data);
+  }); */
+}
+
+/* function getOnLoadPackage () {
+  fs.readFile("./data/posts.json", (error, data) => {
+    if (error) throw error;
+    console.log(JSON.parse(data));
+    return JSON.parse(data);
+  });
+}
+onLoadPackage = getOnLoadPackage(); */
+
+/* fs.appendFile("./data/posts.json", JSON.stringify(onLoadPackage), (error) => {
+  if (error) throw error;
+  return;
+}); */
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", indexPackage);
+  //console.log(test());
+  res.render("index.ejs", onLoadPackage);
 });
 
 app.get("/profile", (req, res) => {
@@ -61,7 +95,7 @@ app.get("/editor", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  res.render("index.ejs", indexPackage);
+  res.render("index.ejs", onLoadPackage);
 });
 
 app.post("/profile", (req, res) => {
