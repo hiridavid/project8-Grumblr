@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import 'header.css';
 @import 'footer.css';
-@import 'hovers.css';
+@import 'post.css';
+
+@import 'animations.css';
 
 :root{
   --c-main: #597E52;
@@ -27,20 +29,6 @@ body{
 
   background-color: var(--c-dark);
   color: var(--c-light);
-
-}
-
-a{
-  color: var(--c-alert);
-  text-decoration: none;
-}
-
-a:hover{
-  text-decoration: underline;
-}
-
-a:active{
-  color: var(--c-alert-subtle)
 }
 
 h1, h2, h3{
@@ -56,103 +44,27 @@ main {
   margin-left: auto;
   margin-right: auto;
   gap: 1rem;
-  max-width: calc(100vw - 2rem);
+  width: calc(100vw - 2rem);
+  max-width: 650px;
 }
 
-article.POST{
-  background-color: var(--c-main);
-  border-bottom: 2px solid var(--c-alert);
-  border-top: 2px solid var(--c-alert);
-  border-left: none;
-  border-right: none;
-  border-radius: 6px;
-  color: var(--c-light);
-}
-
-article.POST > img{
-  width:100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-article.POST p.TAGS a{
-  color: var(--c-light);
-  font-size: 0.9rem;
-  opacity: 0.5;
+a{
+  color: var(--c-alert);
   text-decoration: none;
 }
 
-article.POST .PSEUDO-TAG{
-  visibility: hidden;
-
-  /* 
-  height: 0;
-  width: 0; 
-  z-index: -1;
-  */
-
-  position: relative;
-  bottom: 100px;
-}
-
-article.POST p.TAGS a:hover{
+a:hover{
   text-decoration: underline;
-  transition: all 1s 0s;
 }
 
-/* article.POST section.TEXT-CONTENT{
-  padding: 1rem;
-} */
+a:active{
+  color: var(--c-alert-subtle)
+}
 
 img.PROFILE-IMG{
   border-radius: 50%;
   border: 2px solid var(--c-light);
   
-  width: 3rem;
-  height: 3rem;
+  width: 2.375rem;
+  height: 2.375rem;
 }
-/* article.POST section.INTERACT{
-  padding: 1rem;
-  display:flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  
-} */
-
-article.POST form{
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  
-}
-
-article.POST .FOLLOW-BTN{
-  font-size: 0.7rem;
-  background: transparent;
-  border: 1px solid var(--c-light);
-  border-radius: 24% / 50%;
-  padding: .2rem .6rem;
-  color: var(--c-light);
-}
-
-article.POST div.LIKE-BTN{
-  align-self: stretch;
-  padding-left: 2rem;
-  padding-right: 1rem;
-  /* border: 1px solid yellow; */
-}
-
-/* article.POST img.LIKE-BTN-LIKED{
-  color: red;
-} */
-
-article.POST img.like-button-img{
-  width: 6vw;
-  /* background-color: red; */
-}
-
-article.POST .fa-heart[data-prefix="fas"]{
-  color: var(--c-liked);
-}
-

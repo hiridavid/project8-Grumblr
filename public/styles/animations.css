@@ -1,0 +1,12 @@
+.HIGHLIGHT:hover{
+  box-shadow: 0 0 4px 2px var(--c-highlight);
+}
+
+.BTN-HOVER:hover{
+  background: var(--c-light) !important; 
+  color: var(--c-main) !important;
+}
+
+.LIKE-HOVER:hover *:is(svg, i){
+  color: var(--c-liked);
+}

@@ -5,6 +5,7 @@ import fs from "fs";
 const app = express();
 const port = 3000;
 
+//--main page posts init
 let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
 
 //middleware

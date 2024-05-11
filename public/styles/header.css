@@ -1,27 +1,42 @@
 header{
   border-top: 1px solid var(--c-light);
   border-bottom: 1px solid var(--c-light);
-  margin: 1rem 25vw;
+  
+  min-width: 340px;
+  width: 50%;
+  max-width: 500px;
+  
+  margin: 1rem auto;
 }
 
 nav{
   background: var(--c-main);
-  /* linear-gradient(0deg, 
-  rgba(0,0,0,0.5) 0%,
-  rgba(0,0,0,0.2) 5%,
-  rgba(0,0,0,0) 30%, 
-  rgba(0,0,0,0) 100%),
-  var(--c-main); */
-
   border-bottom: 3px solid var(--c-alert);
-
   box-shadow: 0 5px 10px 0px var(--c-dark);
 }
 
 nav input[type="search"]:focus{
   border: 2px solid var(--c-alert);
-
   box-shadow: 0 0 0 .2rem rgba(198, 168, 105, 0.4);
+}
+
+button.navbar-toggler{
+  --v-padding: calc(0.375rem + 1px);
+  border: 1px solid transparent;
+  background-color: var(--c-alert);
+  height: calc(1.5rem + var(--v-padding) * 2);
+  min-width: calc(1.5rem + var(--v-padding) * 2);
+  padding: calc(var(--v-padding) - 1px) ;
+}
+
+button.navbar-toggler:focus{
+  border: 1px solid var(--c-light);
+  box-shadow: 0 0 1px 2px var(--c-light);
+  transition: box-shadow 300ms 0s ease-out;
+}
+
+nav svg.fa-magnifying-glass{
+  color: var(--c-light);
 }
 
 

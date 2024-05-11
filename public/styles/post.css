@@ -1,0 +1,48 @@
+
+article.POST{
+  background-color: var(--c-main);
+
+  border-bottom: 2px solid var(--c-alert);
+  border-top: 2px solid var(--c-alert);
+  border-left: none;
+  border-right: none;
+  
+  color: var(--c-light);
+}
+
+article.POST .PSEUDO-TAG{
+  visibility: hidden;
+  position: relative;
+  bottom: 100px;
+}
+
+article.POST p.TAGS a{
+  color: var(--c-light);
+  font-size: 0.9rem;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+article.POST p.TAGS a:hover{
+  text-decoration: underline;
+}
+
+article.POST .FOLLOW-BTN{
+  font-size: 0.7rem;
+  padding: .2rem .6rem;
+
+  border-color: var(--c-light);
+  color: var(--c-light);
+}
+
+article.POST .fa-heart[data-prefix="fas"]{
+  color: var(--c-liked);
+}
+
+.END-OF-FEED{
+  color: var(--c-alert);
+}
+
+.END-OF-FEED > svg{
+  color: var(--c-main);
+}
