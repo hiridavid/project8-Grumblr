@@ -15,3 +15,4 @@
 > `NEXT TASK`
 * deep-clean views
 * profile page
+* accessibility (alt, aria, etc)

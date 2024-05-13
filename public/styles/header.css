@@ -12,7 +12,6 @@ header:hover{
 
 header>div.DEBUG-MENU-KNOB{
   opacity: 0.3;
-  border-radius: 100vw;
   width: 1rem;
   height: 4px;
   margin: 2px auto;
@@ -34,12 +33,19 @@ header>div:last-child{
   margin: calc(1rem - 8px) auto 1rem auto;
 }
 
-
-
 nav{
+  color: var(--c-light);
   background: var(--c-main);
   border-bottom: 3px solid var(--c-alert);
   box-shadow: 0 5px 10px 0px var(--c-dark);
+}
+
+nav a.navbar-brand{
+  color: var(--c-light);
+}
+
+nav a.navbar-brand:hover{
+  color: var(--c-light);
 }
 
 nav input[type="search"]:focus{
@@ -65,18 +71,3 @@ button.navbar-toggler:focus{
 nav svg.fa-magnifying-glass{
   color: var(--c-light);
 }
-
-
-/* nav input[type="search"]:after{
-  content: " ";
-  background: url("img/search.svg") no-repeat;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: block;
-  position: relative;
-  top: 7px;
-  right: 7px;
-} */
-
-
