@@ -1,0 +1,6 @@
+footer{
+  background: var(--c-main);
+  border-top: 3px solid var(--c-alert);
+  box-shadow: 0 -5px 10px 0px var(--c-dark);
+  margin-top: 1rem;
+}

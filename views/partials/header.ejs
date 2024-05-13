@@ -16,19 +16,24 @@
   </head>
 
   <header>
-    <form action="/" method="post">
-      <input type="submit" value="Home">
-    </form>
-    <form action="/profile" method="post">
-      <input type="submit" value="Profile">
-    </form>
-    <form action="/editor" method="post">
-      <input type="submit" value="Editor">
-    </form>
+    <div class="DEBUG-MENU-KNOB rounded-pill"></div>
+    <div class="d-flex justify-content-center align-items-center py-2 gap-2">
+      <span>debug:</span>
+      <form action="/" method="post">
+        <input class="btn btn-outline-light rounded-pill" type="submit" value="Home">
+      </form>
+      <form action="/profile" method="post">
+        <input class="btn btn-outline-light rounded-pill" type="submit" value="Profile">
+      </form>
+      <form action="/editor" method="post">
+        <input class="btn btn-outline-light rounded-pill" type="submit" value="Editor">
+      </form>
+    </div>
+    
   </header>
 
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark sticky-top mb-3 px-1" aria-label="Third navbar example">
+    <nav class="navbar navbar-expand-sm  sticky-top mb-3 px-1" aria-label="Third navbar example">
       <div class="container-fluid justify-content-between">
         
         <a class="navbar-brand text-decoration-none" href="/"><img class="rounded-circle" src="img/logo32.png" alt="" srcset="img/logo32.png, img/logo300.png">Grumblr</a>
@@ -40,53 +45,13 @@
             </form>
           </div>
 
-          <form action="/profile" method="GET">
-            <img class="PROFILE-IMG HIGHLIGHT" src="img/pfp462x640.jpg" alt="profile picture" type="submit">
+          <form class="align-self-center" action="/profile" method="GET">
+            <img class="PROFILE-IMG HIGHLIGHT" src="img/pfp92x92.jpg" alt="profile picture" type="submit">
           </form>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="nav>div.container-fluid div.collapse.navbar-collapse" aria-controls="nav>div.container-fluid div.collapse.navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler rounded-circle m-0 align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="nav>div.container-fluid div.collapse.navbar-collapse" aria-controls="nav>div.container-fluid div.collapse.navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
-
-        
-
       </div>
     </nav>
-
-
-
-    <!-- <header class="p-3 mb-3 border-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-  
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-            <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li>
-            <li><a href="#" class="nav-link px-2 link-body-emphasis">Customers</a></li>
-            <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
-          </ul>
-  
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-          </form>
-  
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header> -->
-    
