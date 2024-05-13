@@ -11,3 +11,7 @@
 * about data structures
 * leetcode (interviews)
 * learn a pinch of data science
+
+> `NEXT TASK`
+* deep-clean views
+* profile page

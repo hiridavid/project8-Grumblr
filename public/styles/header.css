@@ -1,4 +1,29 @@
 header{
+  overflow: hidden;
+  
+  max-height: 8px;
+  transition: max-height 250ms 0s ease-in;
+}
+
+header:hover{
+  max-height: 88px;
+  transition: max-height 250ms 0s ease-out;
+}
+
+header>div.DEBUG-MENU-KNOB{
+  opacity: 0.3;
+  border-radius: 100vw;
+  width: 1rem;
+  height: 4px;
+  margin: 2px auto;
+  background: var(--c-light);
+}
+
+header:hover>div.DEBUG-MENU-KNOB{
+  opacity: 0;
+}
+
+header>div:last-child{
   border-top: 1px solid var(--c-light);
   border-bottom: 1px solid var(--c-light);
   
@@ -6,8 +31,10 @@ header{
   width: 50%;
   max-width: 500px;
   
-  margin: 1rem auto;
+  margin: calc(1rem - 8px) auto 1rem auto;
 }
+
+
 
 nav{
   background: var(--c-main);
