@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 //--main page posts init
-let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
+let onLoadPackage = JSON.parse(fs.readFileSync("./public/data/posts.json"));
 
 //middleware
 app.use(express.static("public"));
