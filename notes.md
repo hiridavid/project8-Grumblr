@@ -13,6 +13,8 @@
 * learn a pinch of data science
 
 > `NEXT TASK`
-* deep-clean views
-* profile page
 * accessibility (alt, aria, etc)
+* add editor frontend
+* add custom themes
+* add profile theme
+* add functionality to all buttons
