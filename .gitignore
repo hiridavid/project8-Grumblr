@@ -2,3 +2,4 @@ node_modules/
 drafts.js
 drafts.ejs
 drafts.css
+.env
