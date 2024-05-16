@@ -21,6 +21,18 @@
   
 }
 
+@media (min-width: 550px) {
+  :root{
+    font-size: 14pt;
+  }
+}
+
+@media (max-width: 340px) {
+  :root{
+    font-size: 10pt;
+  }
+}
+
 body{
   font-family: 'Lexend', Tahoma, sans-serif;
   font-optical-sizing: auto;
