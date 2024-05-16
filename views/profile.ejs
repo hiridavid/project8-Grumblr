@@ -1,4 +1,41 @@
 <%- include('partials/header.ejs') %>
-<img src="img/logo300.jpg" alt="profile picture">
-<p>Gnome1425</p>
+
+
+<section class="PROFILE-WRAPPER d-flex flex-column justify-content-center">
+  <div class="PROFILE-COVER">
+
+  </div>
+  <img class="PFP-MAIN"
+  srcset="/img/pfp92x92.jpg 92w, /img/pfp462x640.jpg 462w, /img/pfp1280x1772.jpg 1280w"
+  sizes="(max-width: 100px) 92px, (max-width: 600px) 462px, 1280px"
+  src="/img/pfp1280x1772.jpg">
+  <div class="PROFILE-INFO d-grid <%# d-flex flex-row justify-content-around %>">
+    <div class="row align-items-center">
+      <div class="PROFILE-INTERESTS col d-flex flex-column align-items-center"><h3>78</h3><p>Interests</p></div>
+      <div class="PROFILE-FILLER col d-flex flex-column align-items-center"></div>
+      <div class="PROFILE-FOLLOWERS col d-flex flex-column align-items-center"><h3>1270</h3><p>Followers</p></div>
+    </div>
+    <div class="row align-items-center">
+      <div class="PROFILE-MESSAGES-BTN col d-flex flex-column align-items-center">
+        <form action="">
+          <button class="btn btn-outline-light rounded-pill" type="submit">Messages</button>
+        </form>
+      </div>
+      <div class="PROFILE-USERNAME col d-flex flex-column align-items-center"><h3>Gnomie</h3><p>@gnome-1985</p></div>
+      <div class="PROFILE-POST-BTN col d-flex flex-column align-items-center">
+        <form action="">
+          <button class="btn btn-outline-light rounded-pill" type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  main container
+
+
+</main>
+
 <%- include('partials/footer.ejs') %>
