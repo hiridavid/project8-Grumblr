@@ -1,3 +1,22 @@
+:root{
+  --c-profile-bg: var(--c-alert);
+  --c-profile-post: var(--c-main);
+  --c-profile-color: var(--c-light);
+}
+
+article.PROFILE-POST{
+  color: var(--c-profile-color);
+  background: var(--c-profile-post);
+}
+
+div.PROFILE-END{
+  color: var(--c-profile-color);
+}
+
+div.PROFILE-END svg, div.PROFILE-END a{
+  color: var(--c-profile-post);
+}
+
 section.PROFILE-WRAPPER{
   min-height: fit-content;
 }
@@ -5,10 +24,9 @@ section.PROFILE-WRAPPER{
 div.PROFILE-COVER{
 
   width: 100%;
-  height: 500px;
+  height: 300px;
 
-  background: var(--c-dark);
-  background: linear-gradient(0deg, var(--c-main) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, var(--c-profile-bg) 0%, rgba(0,0,0,0) 100%), var(--c-dark);
 
   
 }
@@ -38,15 +56,21 @@ div.PROFILE-COVER{
 }
 
 div.PROFILE-INFO{
-  background-color: var(--c-main);
-  height: 100px;
+  background-color: var(--c-profile-bg);
+  
 }
 
-div.PROFILE-INFO > .row{
-  height: 12.5vw;
+div.PROFILE-INFO > .row:first-child{
+  min-height: 12.5vw;
 }
 
+div.PROFILE-INFO > .row:last-child{
+  min-height: 12.5vw;
+}
 
+body.PROFILE-BG{
+  background: var(--c-profile-bg);
+}
 
 /* 
 div.PROFILE-INFO *:first-child{

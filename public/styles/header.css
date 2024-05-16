@@ -3,6 +3,8 @@ header{
   
   max-height: 8px;
   transition: max-height 250ms 0s ease-in;
+
+  background: var(--c-dark);
 }
 
 header:hover{
