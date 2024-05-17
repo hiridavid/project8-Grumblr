@@ -5,8 +5,11 @@ import fs from "fs";
 const app = express();
 const port = 3000;
 
-//--main page posts init
+//--main page posts
 let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
+
+//--profile package
+
 
 //middleware
 app.use(express.static("public"));
@@ -19,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/profile", (req, res) => {
-  res.render("profile.ejs");
+  res.render("profile.ejs", onLoadPackage);
 });
 
 app.get("/editor", (req, res) => {
@@ -31,7 +34,7 @@ app.post("/", (req, res) => {
 });
 
 app.post("/profile", (req, res) => {
-  res.render("profile.ejs");
+  res.render("profile.ejs", onLoadPackage);
 });
 
 app.post("/editor", (req, res) => {

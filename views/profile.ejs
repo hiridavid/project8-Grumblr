@@ -1,4 +1,116 @@
 <%- include('partials/header.ejs') %>
-<img src="img/logo300.jpg" alt="profile picture">
-<p>Gnome1425</p>
+
+<body class="PROFILE-BG">
+<%- include('partials/nav.ejs') %>
+
+<section class="PROFILE-WRAPPER d-flex flex-column justify-content-center">
+  <div class="PROFILE-COVER">
+
+  </div>
+  <img class="PFP-MAIN"
+  srcset="/img/pfp92x92.jpg 92w, /img/pfp462x640.jpg 462w, /img/pfp1280x1772.jpg 1280w"
+  sizes="(max-width: 100px) 92px, (max-width: 600px) 462px, 1280px"
+  src="/img/pfp1280x1772.jpg">
+  <div class="PROFILE-INFO d-grid gap-0 gap-sm-2 <%# d-flex flex-row justify-content-around %>">
+    <div class="row align-items-end">
+      <div class="PROFILE-INTERESTS col d-flex flex-column align-items-center"><h3>78</h3><p>Interests</p></div>
+      <div class="PROFILE-FILLER col d-flex flex-column align-items-center"></div>
+      <div class="PROFILE-FOLLOWERS col d-flex flex-column align-items-center"><h3>1270</h3><p>Followers</p></div>
+    </div>
+    <div class="row align-items-start">
+      <div class="PROFILE-MESSAGES-BTN col d-flex flex-column align-items-center">
+        <form action="">
+          <button class="btn btn-outline-light rounded-pill" type="submit">Messages</button>
+        </form>
+      </div>
+      <div class="PROFILE-USERNAME col d-flex flex-column align-items-center"><h3>Gnomie</h3><p>@gnome-1985</p></div>
+      <div class="PROFILE-POST-BTN col d-flex flex-column align-items-center">
+        <form action="">
+          <button class="btn btn-outline-light rounded-pill" type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <% locals.posts.forEach(post => { %>
+    <% if (post.username === "gnome-1985") { %>
+      <article class="POST PROFILE-POST card rounded shadow-sm">
+    
+        <% if (post.tags) { %>
+          <% post.tags.forEach(tag => { %>
+            <span id="<%= tag %>" class="PSEUDO-TAG"></span>
+          <% }) %>
+        <% } %>
+      
+        <img src="<%= post.coverImageURL %>" class="card-img-top" alt="top image">
+        <section class="card-body">
+      
+          <% if (post.cardTitle) { %>
+          <h1 class="card-title"><%= post.cardTitle %></h1>
+          <% } %>
+      
+          <% if (post.cardText) { %>
+            <p class="card-text"><%= post.cardText %></p>
+          <% } %>
+      
+          <% if (post.tags) { %>
+            <p class="TAGS">
+              <% post.tags.forEach(tag => { %>
+                <a href="#<%= tag %>">#<%= tag %></a>
+              <% }) %>
+            </p>
+          <% } %>
+          
+          <div class="d-flex justify-content-between align-items-center" aria-label="interactive field">
+            <div class="d-flex align-items-center gap-2" aria-label="original poster">
+              <img class="PROFILE-IMG HIGHLIGHT" src="<%= post.profilePictureURL %>" alt="Profile Picture">
+              <span aria-label="username"><%= post.username %></span>
+              <form class="d-flex align-items-center align-self-stretch" action="/profile" method="POST">
+                <button class="FOLLOW-BTN BTN-HOVER btn rounded-pill" type="submit" aria-label="click to follow user"><i class="fa-solid fa-shoe-prints fa-rotate-by" style="--fa-rotate-angle: -60deg;"></i>Follow</button>
+              </form>
+            </div>
+            <div class="LIKE-BTN LIKE-HOVER d-flex flex-column justify-content-around align-items-center align-self-stretch ps-4 pe-3" aria-label="like button">
+              <i class="fa-heart fa-lg 
+                <% if (post.liked) { %>
+                  fa-solid
+                <% } else { %>
+                  fa-regular
+                <% } %>
+                "></i>
+      
+              <% if (post.liked) { %>
+                <span class="like-count ml-2"><%= post.likeCounter %></span>
+              <% } %>
+              
+            </div>
+          </div>
+        </section>
+      </article>
+    <% } %>
+  <% }) %>
+    
+  <div class="END-OF-FEED PROFILE-END d-block text-center my-5 py-5 mx-auto">
+    <i class="fa-solid fa-heart-crack fa-2xl"></i>
+    
+    <h3>Oops. That's all for today!</h3>
+    Better go outside and 
+    <a class="icon-link icon-link-hover" href="https://www.rwongphoto.com/gallery/national-park-photography/all/#photoSwipe" target="_blank">
+      touch some grass
+      <svg class="bi mt-1" aria-hidden="true">
+        <use xlink:href="#arrow-right">
+          <symbol id="arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+          </symbol>
+        </use>
+      </svg>
+    </a>
+  </div>
+
+
+</main>
+</body>
+
+
+
 <%- include('partials/footer.ejs') %>
