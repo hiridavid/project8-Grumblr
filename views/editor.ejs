@@ -1,4 +1,32 @@
 <%- include('partials/header.ejs') %>
-<h1>Make a new post :3</h1>
-<input type="text" name="" id="" placeholder="type here owo">
+<body>
+  
+<%- include('partials/nav.ejs') %>
+
+<main>
+  <br>
+  <article class="POST card rounded shadow-sm">
+    <form class="card-body d-grid gap-3">
+
+      <div class="row g-3">
+        <% for( let i = 0; i < 4; i++ ) { %>
+        <div class="col-sm-6">
+          <label for="exampleColorInput" class="form-label">Main Color:</label>
+          <div class="input-group p-0">
+            <input type="color" class="form-control form-control-color flex-grow-0 w-25" id="exampleColorInput" value="#563D7C" title="Choose your color">
+            <input type="text" class="form-control" id="profileBackgroundColor" placeholder="#FFFFFF" aria-label="Username" aria-describedby="exampleColorInput">
+          </div>
+        </div>
+        <% } %>
+      </div>
+      
+    </form>
+  </article>
+
+  <article class="POST card rounded shadow-sm">
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deserunt molestiae tempora corporis magni atque! Sapiente tempore excepturi, non ullam laborum aspernatur fugit voluptatem quibusdam cumque, odio molestias enim provident, cupiditate numquam repellendus reiciendis velit? Voluptates, et. Dicta deleniti qui aperiam quos, enim quibusdam totam eius nam earum minima accusamus error, animi quo sunt. Voluptatibus, harum adipisci officiis libero at sequi et autem molestias explicabo quibusdam praesentium dignissimos, suscipit impedit incidunt, voluptatem possimus unde numquam quis repellendus error aliquid eum nesciunt. Nemo ratione sapiente veritatis numquam cum quisquam nam temporibus repellendus assumenda, minus commodi eos earum consectetur hic, facilis consequatur.
+  </article>
+
+</main>
+
 <%- include('partials/footer.ejs') %>
