@@ -11,7 +11,7 @@
       <div class="row g-3">
         <% for( let i = 0; i < 4; i++ ) { %>
         <div class="col-sm-6">
-          <label for="exampleColorInput" class="form-label">Main Color:</label>
+          <label for="exampleColorInput" class="form-label">Pick a Color:</label>
           <div class="input-group p-0">
             <input type="color" class="form-control form-control-color flex-grow-0 w-25" id="exampleColorInput" value="#563D7C" title="Choose your color">
             <input type="text" class="form-control" id="profileBackgroundColor" placeholder="#FFFFFF" aria-label="Username" aria-describedby="exampleColorInput">
@@ -24,7 +24,31 @@
   </article>
 
   <article class="POST card rounded shadow-sm">
-    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deserunt molestiae tempora corporis magni atque! Sapiente tempore excepturi, non ullam laborum aspernatur fugit voluptatem quibusdam cumque, odio molestias enim provident, cupiditate numquam repellendus reiciendis velit? Voluptates, et. Dicta deleniti qui aperiam quos, enim quibusdam totam eius nam earum minima accusamus error, animi quo sunt. Voluptatibus, harum adipisci officiis libero at sequi et autem molestias explicabo quibusdam praesentium dignissimos, suscipit impedit incidunt, voluptatem possimus unde numquam quis repellendus error aliquid eum nesciunt. Nemo ratione sapiente veritatis numquam cum quisquam nam temporibus repellendus assumenda, minus commodi eos earum consectetur hic, facilis consequatur.
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deserunt molestiae tempora corporis magni atque! Sapiente tempore excepturi, non ullam laborum aspernatur fugit voluptatem quibusdam cumque, odio molestias enim provident, cupiditate numquam repellendus reiciendis velit? Voluptates, et. Dicta deleniti qui aperiam quos, enim quibusdam totam eius nam earum minima accusamus error, animi quo sunt. Voluptatibus, harum adipisci officiis libero at sequi et autem molestias explicabo quibusdam praesentium dignissimos, suscipit impedit incidunt, voluptatem possimus unde numquam quis repellendus error aliquid eum nesciunt. Nemo ratione sapiente veritatis numquam cum quisquam nam temporibus repellendus assumenda, minus commodi eos earum consectetur hic, facilis consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero necessitatibus iure ipsum expedita ad officiis voluptas repudiandae magnam modi, vitae inventore. Laborum, maxime quisquam! Nobis totam expedita voluptatum quis. Praesentium?
+  </article>
+
+  <article class="POST rounded shadow-sm d-grid"> <!-- d-flex justify-content-between align-items-center -->
+    <div class="row row-cols-2">
+
+      <form action="/profile" class="PROFILE-BACK col">
+        <div class="w-100 h-100 d-flex justify-content-start py-2" type="submit">
+          <div class="mb-0 ms-3">
+            <i class="fa-solid fa-chevron-left"></i> Back
+          </div>
+        </div>
+      </form>
+
+      <form action="/" class="PROFILE-POST col">
+        <div class="w-100 h-100 d-flex justify-content-end py-2" type="submit">
+          <div class="mb-0 me-3">
+            Post <i class="fa-solid fa-caret-right fa-xl"></i>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    
+    
   </article>
 
 </main>

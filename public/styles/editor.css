@@ -1,0 +1,7 @@
+.PROFILE-BACK{
+  border-right: 1px solid var(--c-alert);
+}
+
+.PROFILE-POST{
+  border-left: 1px solid var(--c-alert);
+}

@@ -82,3 +82,14 @@ img.PROFILE-IMG{
   width: 2.375rem;
   height: 2.375rem;
 }
+
+.POST{
+  background-color: var(--c-main);
+
+  border-bottom: 2px solid var(--c-alert);
+  border-top: 2px solid var(--c-alert);
+  border-left: none;
+  border-right: none;
+  
+  color: var(--c-light);
+}
