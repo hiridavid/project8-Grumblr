@@ -5,3 +5,12 @@
 .PROFILE-POST{
   border-left: 1px solid var(--c-alert);
 }
+
+.BTN-RESET{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
