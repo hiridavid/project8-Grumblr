@@ -6,18 +6,30 @@
 <main>
   <br>
   <article class="POST card rounded shadow-sm">
-    <form class="card-body d-grid gap-3">
+    <form action="/themeHandler" class="COLOR-PICKER card-body d-grid gap-3" method="POST">
 
       <div class="row g-3">
-        <% for( let i = 0; i < 4; i++ ) { %>
+
+        <% locals.colorPicker.forEach(color => { %>
+
         <div class="col-sm-6">
-          <label for="exampleColorInput" class="form-label">Pick a Color:</label>
+          <label for="<%= color.label %>ColorPicker" class="form-label"><%= color.label %> Color:</label>
           <div class="input-group p-0">
-            <input type="color" class="form-control form-control-color flex-grow-0 w-25" id="exampleColorInput" value="#563D7C" title="Choose your color">
-            <input type="text" class="form-control" id="profileBackgroundColor" placeholder="#FFFFFF" aria-label="Username" aria-describedby="exampleColorInput">
+            <input type="color" class="form-control form-control-color flex-grow-0 w-25" id="<%= color.label %>ColorPicker" value="<%= color.currentColorHex %>" title="Choose your color">
+            <input type="text" class="form-control" id="<%= color.label %>ColorHex" placeholder="<%= color.currentColorHex %>" aria-label="<%= color.label %> color hex code input" aria-describedby="<%= color.label %>ColorPicker">
           </div>
         </div>
-        <% } %>
+
+        <% }) %>
+
+        <div class="col-sm-6">
+
+        </div>
+
+        <button class="BTN-RESET col-sm-6" type="submit">Save Theme</button>
+
+        <button type="submit"></button>
+
       </div>
       
     </form>
