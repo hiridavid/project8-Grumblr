@@ -6,6 +6,11 @@
   border-left: 1px solid var(--c-alert);
 }
 
+/* .PROFILE-NAV-BOTTOM{
+	background: transparent;
+	transition: background 1s 0s ease;
+} */
+
 .BTN-RESET{
 	background: none;
 	color: inherit;
@@ -15,6 +20,6 @@
 	outline: inherit;
 }
 
-/* form.COLOR-PICKER button{
-	width: 100%;
-} */
+form.COLOR-PICKER input[type="color"]::-webkit-color-swatch, input[type="color"]::-moz-color-swatch{
+	border-radius: 100vw;
+}

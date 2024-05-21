@@ -15,8 +15,8 @@
         <div class="col-sm-6">
           <label for="<%= color.label %>ColorPicker" class="form-label"><%= color.label %> Color:</label>
           <div class="input-group p-0">
-            <input type="color" class="form-control form-control-color flex-grow-0 w-25" id="<%= color.label %>ColorPicker" value="<%= color.currentColorHex %>" title="Choose your color">
-            <input type="text" class="form-control" id="<%= color.label %>ColorHex" placeholder="<%= color.currentColorHex %>" aria-label="<%= color.label %> color hex code input" aria-describedby="<%= color.label %>ColorPicker">
+            <input type="color" class="form-control form-control-color flex-grow-0 w-25 rounded-start-pill" id="<%= color.label %>ColorPicker" value="<%= color.currentColorHex %>" title="Choose your color">
+            <input type="text" class="form-control rounded-end-pill" id="<%= color.label %>ColorHex" placeholder="<%= color.currentColorHex %>" aria-label="<%= color.label %> color hex code input" aria-describedby="<%= color.label %>ColorPicker">
           </div>
         </div>
 
@@ -39,7 +39,7 @@
     <div class="row row-cols-2">
 
       <form action="/profile" class="PROFILE-BACK col">
-        <button class="BTN-RESET w-100 h-100 d-flex justify-content-start py-2" type="submit">
+        <button class=" BTN-RESET w-100 h-100 d-flex justify-content-start py-2" type="submit">
           <div class="mb-0 ms-3">
             <i class="fa-solid fa-chevron-left"></i> Back
           </div>
@@ -47,7 +47,7 @@
       </form>
 
       <form action="/" class="PROFILE-POST col">
-        <button class="BTN-RESET w-100 h-100 d-flex justify-content-end py-2" type="submit">
+        <button class=" BTN-RESET w-100 h-100 d-flex justify-content-end py-2" type="submit">
           <div class="mb-0 me-3">
             Post <i class="fa-solid fa-caret-right fa-xl"></i>
           </div>

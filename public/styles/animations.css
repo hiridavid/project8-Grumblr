@@ -10,3 +10,8 @@
 .LIKE-HOVER:hover *:is(svg, i){
   color: var(--c-liked);
 }
+
+/* .PROFILE-NAV-BOTTOM:hover{
+	background: var(--c-light);
+	transition: background 1s 0s ease;
+} */
