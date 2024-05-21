@@ -6,9 +6,9 @@
 <main>
   <br>
   <article class="POST card rounded shadow-sm">
-    <form action="/themeHandler" class="COLOR-PICKER card-body d-grid gap-3" method="POST">
+    <form action="/themeHandler" class="COLOR-PICKER p-2 <%# card-body d-grid gap-3 %>" method="POST">
 
-      <div class="row g-3">
+      <div class="row g-3 m-0">
 
         <% locals.colorPicker.forEach(color => { %>
 
@@ -22,13 +22,9 @@
 
         <% }) %>
 
-        <div class="col-sm-6">
-
+        <div class="col-12">
+          <button class="btn btn-outline-light rounded-pill w-100" type="submit">Save Theme</button>
         </div>
-
-        <button class="BTN-RESET col-sm-6" type="submit">Save Theme</button>
-
-        <button type="submit"></button>
 
       </div>
       
