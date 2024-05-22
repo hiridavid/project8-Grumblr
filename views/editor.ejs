@@ -32,7 +32,7 @@
   </article>
 
   <article class="POST card rounded shadow-sm">
-    <form action="/createPost" class="card-body" method="post">
+    <form action="/createPost" id="createPost" class="card-body" method="post">
       <input type="file" class="form-control" name="postCoverImage" id="postCoverImage" accept=".jpg,.jpeg,.png,.apng,.gif,.webp,.svg">
       <input type="text" class="form-control" name="postTitle" id="postTitle">
       <input type="text" class="form-control" name="postBody" id="postBody">
@@ -53,17 +53,15 @@
         </button>
       </form>
 
-      <form action="/" class="PROFILE-POST col">
-        <button class=" BTN-RESET w-100 h-100 d-flex justify-content-end py-2" type="submit">
+      <div class="PROFILE-POST col">
+        <button class=" BTN-RESET w-100 h-100 d-flex justify-content-end py-2" type="submit" form="createPost">
           <div class="mb-0 me-3">
             Post <i class="fa-solid fa-caret-right fa-xl"></i>
           </div>
         </button>
-      </form>
+      </div>
 
     </div>
-    
-    
   </article>
 
 </main>
