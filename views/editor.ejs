@@ -15,15 +15,15 @@
         <div class="col-sm-6">
           <label for="<%= color.label %>ColorPicker" class="form-label"><%= color.label %> Color:</label>
           <div class="input-group p-0">
-            <input type="color" class="form-control form-control-color flex-grow-0 w-25 rounded-start-pill" id="<%= color.label %>ColorPicker" value="<%= color.currentColorHex %>" title="Choose your color">
-            <input type="text" class="form-control rounded-end-pill" id="<%= color.label %>ColorHex" placeholder="<%= color.currentColorHex %>" aria-label="<%= color.label %> color hex code input" aria-describedby="<%= color.label %>ColorPicker">
+            <input type="color" class="FOCUS-HIGHLIGHT form-control form-control-color flex-grow-0 w-25 rounded-start-pill" id="<%= color.label %>ColorPicker" value="<%= color.currentColorHex %>" title="Choose your color">
+            <input type="text" class="FOCUS-HIGHLIGHT form-control rounded-end-pill" id="<%= color.label %>ColorHex" placeholder="<%= color.currentColorHex %>" aria-label="<%= color.label %> color hex code input" aria-describedby="<%= color.label %>ColorPicker">
           </div>
         </div>
 
         <% }) %>
 
         <div class="col-12">
-          <button class="btn btn-outline-light rounded-pill w-100" type="submit">Save Theme</button>
+          <button class="BTN-HOVER btn btn-outline-light rounded-pill w-100" type="submit">Save Theme</button>
         </div>
 
       </div>
@@ -32,14 +32,40 @@
   </article>
 
   <article class="POST card rounded shadow-sm">
-    <form action="/createPost" id="createPost" class="card-body" method="post">
-      <input type="file" class="form-control" name="postCoverImage" id="postCoverImage" accept=".jpg,.jpeg,.png,.apng,.gif,.webp,.svg">
-      <input type="text" class="form-control" name="postTitle" id="postTitle">
-      <input type="text" class="form-control" name="postBody" id="postBody">
-      <input type="text" class="form-control" name="postTags" id="postTags">
-      
 
-    </form>
+    <div class="card-body">
+      <form action="/createPost" id="createPost" class="d-flex flex-column" method="post">
+        <input type="file" class="FOCUS-HIGHLIGHT form-control" name="postCoverImage" id="postCoverImage" accept=".jpg,.jpeg,.png,.apng,.gif,.webp,.svg">
+        <img class="mb-3" src="" alt="">
+        <input type="text" class="FOCUS-HIGHLIGHT card-title h1" name="postTitle" id="postTitle" placeholder="Title" maxlength="20">
+        <textarea class="FOCUS-HIGHLIGHT card-text mb-3" name="postBody" id="postBody"  placeholder="Write your post here." maxlength="10000"></textarea>
+        <input type="text" class="FOCUS-HIGHLIGHT mb-3" name="postTags" id="postTags" placeholder="#Tags #separated #by #hashtags/pound-signs" maxlength="2000">
+      </form>
+
+      <div class="d-flex justify-content-between align-items-center" aria-label="interactive field">
+        <div class="d-flex align-items-center gap-2" aria-label="original poster">
+          <img class="PROFILE-IMG HIGHLIGHT" src="<%= locals.posts.profilePictureURL %>" alt="Profile Picture">
+          <span aria-label="username"><%= locals.posts.username %></span>
+          <form class="d-flex align-items-center align-self-stretch" action="/profile" method="POST">
+            <button class="FOLLOW-BTN BTN-HOVER btn rounded-pill" type="submit" aria-label="click to follow user"><i class="fa-solid fa-shoe-prints fa-rotate-by" style="--fa-rotate-angle: -60deg;"></i>Follow</button>
+          </form>
+        </div>
+        <div class="LIKE-BTN LIKE-HOVER d-flex flex-column justify-content-around align-items-center align-self-stretch ps-4 pe-3" aria-label="like button">
+          <i class="fa-heart fa-lg 
+            <% if (locals.posts.liked) { %>
+              fa-solid
+            <% } else { %>
+              fa-regular
+            <% } %>
+            "></i>
+
+          <% if (locals.posts.liked) { %>
+            <span class="like-count ml-2"><%= locals.posts.likeCounter %></span>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    
   </article>
 
   <article class="POST rounded shadow-sm d-grid"> <!-- d-flex justify-content-between align-items-center -->

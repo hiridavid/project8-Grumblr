@@ -36,13 +36,15 @@
 }
 
 body{
+  background-color: var(--c-dark);
+  color: var(--c-light);
+}
+
+body *{
   font-family: 'Lexend', Tahoma, sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-
-  background-color: var(--c-dark);
-  color: var(--c-light);
 }
 
 h1, h2, h3{
@@ -92,4 +94,8 @@ img.PROFILE-IMG{
   border-right: none;
   
   color: var(--c-light);
+}
+
+*::grammar-error{
+  text-decoration-color: var(--c-alert);
 }

@@ -3,8 +3,19 @@
 }
 
 .BTN-HOVER:hover{
+  transition: color .15s ease-in-out,
+  background-color .15s ease-in-out,
+  border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
+}
+
+.BTN-HOVER:hover{
   background: var(--c-light) !important; 
   color: var(--c-main) !important;
+  transition: color .15s ease-in-out,
+  background-color .15s ease-in-out,
+  border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
 }
 
 .LIKE-HOVER:hover *:is(svg, i){
@@ -15,3 +26,17 @@
 	background: var(--c-light);
 	transition: background 1s 0s ease;
 } */
+
+.FOCUS-HIGHLIGHT{
+  transition: border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
+}
+
+.FOCUS-HIGHLIGHT:focus, .FOCUS-HIGHLIGHT:focus-visible{
+  outline: none;
+  border-color: var(--c-alert);
+  box-shadow: 0 0 .18rem .20rem rgba(198, 168, 105, 0.4);
+  transition: border-color .15s ease-in-out,
+  box-shadow .15s ease-in-out;
+}
+

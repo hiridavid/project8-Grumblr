@@ -12,28 +12,36 @@ let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
 
 
 //--editor package
-let editorPackage = { colorPicker: [
-  {
-    label: "Background",
-    currentColorHex: "#273329",
-    currentColorVar: "--c-dark"
+let editorPackage = {
+  colorPicker: [
+    {
+      label: "Background",
+      currentColorHex: "#273329",
+      currentColorVar: "--c-dark",
+    },
+    {
+      label: "Post",
+      currentColorHex: "#597E52",
+      currentColorVar: "--c-main",
+    },
+    {
+      label: "Accents",
+      currentColorHex: "#C6A969",
+      currentColorVar: "--c-alert",
+    },
+    {
+      label: "Text",
+      currentColorHex: "#FFFFEC",
+      currentColorVar: "--c-light",
+    },
+  ],
+  posts: {
+    profilePictureURL: "img/pfp92x92.jpg",
+    username: "gnome-1985",
+    liked: false,
+    likeCounter: 1,
   },
-  {
-    label: "Post",
-    currentColorHex: "#597E52",
-    currentColorVar: "--c-main"
-  },
-  {
-    label: "Accents",
-    currentColorHex: "#C6A969",
-    currentColorVar: "--c-alert"
-  },
-  {
-    label: "Text",
-    currentColorHex: "#FFFFEC",
-    currentColorVar: "--c-light"
-  },
-]};
+};
 
 //middleware
 app.use(express.static("public"));
