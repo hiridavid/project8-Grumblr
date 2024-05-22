@@ -34,7 +34,7 @@
   <article class="POST card rounded shadow-sm">
 
     <div class="card-body">
-      <form action="/createPost" id="createPost" class="d-flex flex-column" method="post">
+      <form action="/createPost" id="createPost" class="d-flex flex-column" method="POST">
         <input type="file" class="FOCUS-HIGHLIGHT form-control" name="postCoverImage" id="postCoverImage" accept=".jpg,.jpeg,.png,.apng,.gif,.webp,.svg">
         <img class="mb-3" src="" alt="">
         <input type="text" class="FOCUS-HIGHLIGHT card-title h1" name="postTitle" id="postTitle" placeholder="Title" maxlength="20">
@@ -71,7 +71,7 @@
   <article class="POST rounded shadow-sm d-grid"> <!-- d-flex justify-content-between align-items-center -->
     <div class="row row-cols-2">
 
-      <form action="/profile" class="PROFILE-BACK col">
+      <form action="/profile" class="PROFILE-BACK col" method="GET">
         <button class=" BTN-RESET w-100 h-100 d-flex justify-content-start py-2" type="submit">
           <div class="mb-0 ms-3">
             <i class="fa-solid fa-chevron-left"></i> Back
