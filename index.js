@@ -8,8 +8,6 @@ const port = 3000;
 //--main page posts
 let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
 
-//--profile package
-
 
 //--editor package
 let editorPackage = {
