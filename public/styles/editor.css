@@ -1,0 +1,75 @@
+.PROFILE-BACK{
+  border-right: 1px solid var(--c-alert);
+}
+
+.PROFILE-POST{
+  border-left: 1px solid var(--c-alert);
+}
+
+/* .PROFILE-NAV-BOTTOM{
+	background: transparent;
+	transition: background 1s 0s ease;
+} */
+
+.BTN-RESET{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+form.COLOR-PICKER input[type="color"]::-webkit-color-swatch, input[type="color"]::-moz-color-swatch{
+	border-radius: 100vw;
+}
+
+#createPost input, #createPost textarea, #createPost input::file-selector-button{
+	background: transparent;
+	border:none;
+	color: var(--c-light);
+
+	font-family: 'Lexend', Tahoma, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+#createPost input::file-selector-button{
+	border: 1px solid var(--c-light);
+	border-radius: 100vw;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out;
+
+	font-weight: 400;
+}
+
+#createPost input[type="file"]:hover::file-selector-button{
+	background-color: var(--c-light);
+  color: var(--c-main);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out;
+}
+
+input#postTitle{
+	font-family: 'Oswald', 'Arial Narrow Bold', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+	text-transform: uppercase;
+}
+
+/* textarea#postBody::-webkit-scrollbar{
+	width: 0 !important;
+} */
+textarea#postBody{
+	scrollbar-width: 0 !important;
+	scrollbar-color: transparent transparent;
+}
+
+/* textarea#postBody::-webkit-resizer{
+	display:none;
+} */
+
+input#postTags{
+	font-size: 0.9rem;
+	opacity: 0.5;
+}

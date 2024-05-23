@@ -4,6 +4,7 @@
 @import 'footer.css';
 @import 'post.css';
 @import 'profile.css';
+@import 'editor.css';
 
 @import 'animations.css';
 
@@ -35,13 +36,15 @@
 }
 
 body{
+  background-color: var(--c-dark);
+  color: var(--c-light);
+}
+
+body *{
   font-family: 'Lexend', Tahoma, sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-
-  background-color: var(--c-dark);
-  color: var(--c-light);
 }
 
 h1, h2, h3{
@@ -80,4 +83,19 @@ img.PROFILE-IMG{
   
   width: 2.375rem;
   height: 2.375rem;
+}
+
+.POST{
+  background-color: var(--c-main);
+
+  border-bottom: 2px solid var(--c-alert);
+  border-top: 2px solid var(--c-alert);
+  border-left: none;
+  border-right: none;
+  
+  color: var(--c-light);
+}
+
+*::grammar-error{
+  text-decoration-color: var(--c-alert);
 }

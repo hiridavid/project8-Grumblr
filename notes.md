@@ -1,21 +1,99 @@
-> planning
-* I need to draw the logic of the website in figjam
-
-> problem solving
-* probe the error
-* identify the problem
-* identify a solution (what needs to be done)
-* break it down
-
-> global notes
-* about data structures
-* leetcode (interviews)
-* learn a pinch of data science
 
 > `NEXT TASK`
-* add editor frontend
-* add custom themes
+* add functionality to all navigation buttons
+* making posts
+* messages/manage follows
 * add profile theme
-* add functionality to all buttons
+
+> optional tasks
+* deleting posts
+* add custom themes
+* multiple profiles
+* proper follow function
+* make a proper search engine
+* login/register, multiple users
+* save post drafts
 * accessibility (alt, aria, etc)
 * check for security issues
+ 
+
+> http elements
+
+* header (
+  user link
+) {
+  home _href_
+  user profile _href_
+  editor _href_
+}
+
+* nav (
+  user link
+  profilePictureURL
+) {
+  home page _href_
+  search _POST_
+  user profile _href_
+}
+
+* footer () {}
+
+* post (
+  tags
+  coverImageURL
+  cardTitle
+  cardText
+  profilePictureURL
+  username
+  liked
+  likeCounter
+) {
+  follow _POST_
+  like _POST_
+  "go outside" easter egg _href_ 
+}
+
+* index (
+  header()
+  nav()
+  post()
+  footer()
+) {}
+
+* profile (
+  
+  post()
+  display name
+  following/interests
+  followers/fans
+  theme
+) {
+  messages _GET_
+  post _href_
+  (message) _GET_
+  (follow) _POST_
+  edit post _GET_
+  delete post _DELETE_
+  "like" easter egg (punish for liking own post) _button_
+  ~~"follow" easter egg (u can't do that)~~ _button_
+  (follow) _POST_
+  (like) _POST_
+}
+
+* editor (
+  header()
+  nav()
+  footer()
+  colorPicker.label
+  colorPicker.currentColorHEX
+  profilePictureURL
+  username
+  likeCounter - for editing posts
+) {
+  themeHandler _POST_
+  createPost _POST_
+  ~~"like" easter egg (punish for liking own post)~~ _button_
+  "follow" easter egg (u can't do that) _button_
+  back to profile _href_
+  post _POST_
+}

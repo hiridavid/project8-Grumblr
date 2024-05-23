@@ -1,14 +1,4 @@
 
-article.POST{
-  background-color: var(--c-main);
-
-  border-bottom: 2px solid var(--c-alert);
-  border-top: 2px solid var(--c-alert);
-  border-left: none;
-  border-right: none;
-  
-  color: var(--c-light);
-}
 
 article.POST .PSEUDO-TAG{
   visibility: hidden;
