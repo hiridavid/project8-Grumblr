@@ -74,8 +74,6 @@
   (follow) _POST_
   edit post _GET_
   delete post _DELETE_
-  "like" easter egg (punish for liking own post) _button_
-  ~~"follow" easter egg (u can't do that)~~ _button_
   (follow) _POST_
   (like) _POST_
 }
@@ -92,8 +90,6 @@
 ) {
   themeHandler _POST_
   createPost _POST_
-  ~~"like" easter egg (punish for liking own post)~~ _button_
-  "follow" easter egg (u can't do that) _button_
   back to profile _href_
   post _POST_
 }

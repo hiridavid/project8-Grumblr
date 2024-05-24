@@ -36,3 +36,13 @@ keys.forEach((key) => {
     color.prop("value", text.prop("value"));
   });
 });
+
+//no submit on enter
+$("#createPost input, #createPost textarea").on("keydown", (event) => {
+  
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    $(event.target).next().focus();
+  };
+
+});

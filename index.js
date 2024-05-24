@@ -4,13 +4,27 @@ import fs from "fs";
 //init
 const app = express();
 const port = 3000;
+let currentUser = undefined;
+
+//puts locals package together
+class Locals {
+  constructor(includePosts = true, includeThemes = true) {
+    if (includePosts)
+      this.posts = JSON.parse(fs.readFileSync("./data/posts.json")).posts;
+    //if (includeThemes) this.themes = JSON.parse(fs.readFileSync("./data/themes.json")).themes;
+  }
+
+  print(target = "posts") {
+    console.log(this[target]);
+  }
+}
 
 //--main page posts
 let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
 
-
 //--editor package
-let editorPackage = {
+let editorPackage = JSON.parse(fs.readFileSync("./data/themes.json"));
+/* {
   colorPicker: [
     {
       label: "Background",
@@ -39,7 +53,22 @@ let editorPackage = {
     liked: false,
     likeCounter: 1,
   },
-};
+}; */
+
+//API for rendering with included dependencies
+//--!! onLoadPackage is taken from global, not the http response that called Page
+//--!! res is not defined
+/* const Page = {
+
+  home: ["index.ejs", onLoadPackage],
+  profile: ["profile.ejs", onLoadPackage],
+  editor: ["editor.ejs", editorPackage],
+  
+
+  load ( target = "home" ) {
+    res.render( this[target][0], this[target][1] );
+  }
+} */
 
 //middleware
 app.use(express.static("public"));
@@ -47,8 +76,8 @@ app.use(express.urlencoded({ extended: true }));
 
 //http
 app.get("/", (req, res) => {
-  //console.log(onLoadPackage);
   res.render("index.ejs", onLoadPackage);
+  //new Locals().print(); WORKS!
 });
 
 app.post("/", (req, res) => {
@@ -69,6 +98,11 @@ app.get("/editor", (req, res) => {
 
 app.post("/editor", (req, res) => {
   res.render("editor.ejs", editorPackage);
+});
+
+app.post("/createPost", (req, res) => {
+  console.log(req.body);
+  res.status(200);
 });
 
 app.listen(port, () => {

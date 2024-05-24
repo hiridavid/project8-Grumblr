@@ -34,10 +34,10 @@
   <article class="POST card rounded shadow-sm">
 
     <div class="card-body">
-      <form action="/createPost" id="createPost" class="d-flex flex-column" method="POST">
+      <form action="/createPost" id="createPost" class="d-flex flex-column" method="POST" <%# enctype="multipart/form-data" %>>
         <input type="file" class="FOCUS-HIGHLIGHT form-control" name="postCoverImage" id="postCoverImage" accept=".jpg,.jpeg,.png,.apng,.gif,.webp,.svg">
         <img class="mb-3" src="" alt="">
-        <input type="text" class="FOCUS-HIGHLIGHT card-title h1" name="postTitle" id="postTitle" placeholder="Title" maxlength="20">
+        <input type="text" class="FOCUS-HIGHLIGHT card-title h1" name="postTitle" id="postTitle" placeholder="Title" maxlength="40">
         <textarea class="FOCUS-HIGHLIGHT card-text mb-3" name="postBody" id="postBody"  placeholder="Write your post here." maxlength="10000"></textarea>
         <input type="text" class="FOCUS-HIGHLIGHT mb-3" name="postTags" id="postTags" placeholder="#Tags #separated #by #hashtags/pound-signs" maxlength="2000">
       </form>
