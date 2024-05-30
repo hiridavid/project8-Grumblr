@@ -40,3 +40,6 @@
   box-shadow .15s ease-in-out;
 }
 
+a.btn:hover{
+  text-decoration: none;
+}

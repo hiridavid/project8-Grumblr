@@ -1,13 +1,114 @@
 import express from "express";
 import fs from "fs";
+import filters from "./app/filters.js"
+
+//deconstructing
+const {
+  getUserObj,
+  getUserPosts,
+  getUserTheme,
+  getPostByID,
+  getFilteredPosts,
+  getPreparedPosts,
+} = filters;
 
 //init
 const app = express();
 const port = 3000;
-let currentUser = undefined;
+let users = JSON.parse(fs.readFileSync("./data/users.json")).users;
+let posts = JSON.parse(fs.readFileSync("./data/posts.json")).posts;
+let currentUser = "gnome-1985";
+let currentPfpURL = "img/pfp92x92.jpg";
+
+
+
+
+
+
+//functions
+
+
+//middleware
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+/* app.use("/", (req, res, next)=>{
+  
+  next();
+}); */
+
+//http
+app.get("/", (req, res) => {
+  const indexLocals = {
+    currentUser: currentUser,
+    currentPfpURL: currentPfpURL,
+    posts: getPreparedPosts(posts, currentUser, users),
+  };
+
+  res.render("index.ejs", indexLocals);
+  res.status(200).end();
+});
+
+app.get("/u/:username", (req, res) => {
+  const username = req.params.username;
+  const profileLocals = {
+    currentUser: currentUser,
+    currentPfpURL: currentPfpURL,
+    user: getUserObj(username, users),
+    posts: getPreparedPosts(getUserPosts(username, posts), currentUser, users),
+    myProfile: currentUser === username,
+  }
+
+  res.render("profile.ejs", profileLocals);
+  res.status(200).end();
+});
+
+/* app.post("/", (req, res) => {
+  res.render("index.ejs", onLoadPackage);
+}); */
+
+/* app.get("/profile", (req, res) => {
+  res.render("profile.ejs", onLoadPackage);
+}); */
+
+/* app.post("/profile", (req, res) => {
+  let profileLocals = onLoadPackage;
+  profileLocals.user = users.find((user) => {
+    return user.name === req.body.currentUser;
+  });
+
+  res.render("profile.ejs", profileLocals);
+}); */
+
+/* app.get("/editor", (req, res) => {
+  res.render("editor.ejs", editorPackage);
+});
+
+app.post("/editor", (req, res) => {
+  res.render("editor.ejs", editorPackage);
+}); */
+
+/* app.post("/createPost", (req, res) => {
+  console.log(req.body);
+  res.status(200);
+}); */
+
+
+
+/* users.forEach((user) => {
+  app.get(`/u/${user.name}`, (req, res) => {
+    onLoadPackage.user = user;
+    res.render("profile.ejs", onLoadPackage);
+  });
+}); */
+
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
 
 //puts locals package together
-class Locals {
+/* class Locals {
   constructor(includePosts = true, includeThemes = true) {
     if (includePosts)
       this.posts = JSON.parse(fs.readFileSync("./data/posts.json")).posts;
@@ -17,13 +118,14 @@ class Locals {
   print(target = "posts") {
     console.log(this[target]);
   }
-}
+} */
 
 //--main page posts
-let onLoadPackage = JSON.parse(fs.readFileSync("./data/posts.json"));
+/* let onLoadPackage = 
+onLoadPackage.currentUser = currentUser; */
 
 //--editor package
-let editorPackage = JSON.parse(fs.readFileSync("./data/themes.json"));
+//let editorPackage = JSON.parse(fs.readFileSync("./data/themes.json"));
 /* {
   colorPicker: [
     {
@@ -69,42 +171,3 @@ let editorPackage = JSON.parse(fs.readFileSync("./data/themes.json"));
     res.render( this[target][0], this[target][1] );
   }
 } */
-
-//middleware
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-
-//http
-app.get("/", (req, res) => {
-  res.render("index.ejs", onLoadPackage);
-  //new Locals().print(); WORKS!
-});
-
-app.post("/", (req, res) => {
-  res.render("index.ejs", onLoadPackage);
-});
-
-app.get("/profile", (req, res) => {
-  res.render("profile.ejs", onLoadPackage);
-});
-
-app.post("/profile", (req, res) => {
-  res.render("profile.ejs", onLoadPackage);
-});
-
-app.get("/editor", (req, res) => {
-  res.render("editor.ejs", editorPackage);
-});
-
-app.post("/editor", (req, res) => {
-  res.render("editor.ejs", editorPackage);
-});
-
-app.post("/createPost", (req, res) => {
-  console.log(req.body);
-  res.status(200);
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});

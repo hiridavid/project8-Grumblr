@@ -1,6 +1,12 @@
 <%- include('partials/header.ejs') %>
 
 <body class="PROFILE-BG">
+  <div id="themeCarrier" style="display:none; visibility:hidden;" 
+  data-theme-dark="<%= locals.user.theme[0] %>" 
+  data-theme-main="<%= locals.user.theme[1] %>" 
+  data-theme-alert="<%= locals.user.theme[2] %>" 
+  data-theme-light="<%= locals.user.theme[3] %>" ></div>
+
 <%- include('partials/nav.ejs') %>
 
 <section class="PROFILE-WRAPPER d-flex flex-column justify-content-center">
@@ -8,14 +14,14 @@
 
   </div>
   <img class="PFP-MAIN"
-  srcset="/img/pfp92x92.jpg 92w, /img/pfp462x640.jpg 462w, /img/pfp1280x1772.jpg 1280w"
-  sizes="(max-width: 100px) 92px, (max-width: 600px) 462px, 1280px"
-  src="/img/pfp1280x1772.jpg">
+  <%# srcset="/img/pfp92x92.jpg 92w, /img/pfp462x640.jpg 462w, /img/pfp1280x1772.jpg 1280w"
+  sizes="(max-width: 100px) 92px, (max-width: 600px) 462px, 1280px" %>
+  src="/<%= locals.user.profilePictureURL %>" alt="Profile picture">
   <div class="PROFILE-INFO d-grid gap-0 gap-sm-2 <%# d-flex flex-row justify-content-around %>">
     <div class="row align-items-end">
-      <div class="PROFILE-INTERESTS col d-flex flex-column align-items-center"><h3>78</h3><p>Interests</p></div>
+      <div class="PROFILE-INTERESTS col d-flex flex-column align-items-center"><h3><%= locals.user.following.length %></h3><p>Interests</p></div>
       <div class="PROFILE-FILLER col d-flex flex-column align-items-center"></div>
-      <div class="PROFILE-FOLLOWERS col d-flex flex-column align-items-center"><h3>1270</h3><p>Followers</p></div>
+      <div class="PROFILE-FOLLOWERS col d-flex flex-column align-items-center"><h3><%= locals.user.followers.length %></h3><p>Followers</p></div>
     </div>
     <div class="row align-items-start">
       <div class="PROFILE-MESSAGES-BTN col d-flex flex-column align-items-center">
@@ -23,7 +29,7 @@
           <button class="btn btn-outline-light rounded-pill" type="submit">Messages</button>
         </form>
       </div>
-      <div class="PROFILE-USERNAME col d-flex flex-column align-items-center"><h3>Gnomie</h3><p>@gnome-1985</p></div>
+      <div class="PROFILE-USERNAME col d-flex flex-column align-items-center"><h3><%= locals.user.displayName %></h3><p>@<%= locals.user.name %></p></div>
       <div class="PROFILE-POST-BTN col d-flex flex-column align-items-center">
         <form action="/editor">
           <button class="btn btn-outline-light rounded-pill" type="submit">Post</button>
@@ -35,7 +41,7 @@
 
 <main>
   <% locals.posts.forEach(post => { %>
-    <% if (post.username === "gnome-1985") { %>
+    <% if (post.username === locals.currentUser) { %>
       <article class="POST PROFILE-POST card rounded shadow-sm">
     
         <% if (post.tags) { %>

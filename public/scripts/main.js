@@ -46,3 +46,6 @@ $("#createPost input, #createPost textarea").on("keydown", (event) => {
   };
 
 });
+
+//profile theme
+if ($('#themeCarrier')) console.log($('#themeCarrier'));
