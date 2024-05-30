@@ -96,3 +96,13 @@
 
 
 `a href == form GET`
+
+buglist:
+  like btn does nothing
+  likes are not counted
+  messages do nothing
+  editor route doesn't work
+  follow btn does nothing
+  pfp click does nothing
+> nav pfp click does nothing
+  all profiles look like your own

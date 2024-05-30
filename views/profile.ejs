@@ -16,7 +16,7 @@
   <img class="PFP-MAIN"
   <%# srcset="/img/pfp92x92.jpg 92w, /img/pfp462x640.jpg 462w, /img/pfp1280x1772.jpg 1280w"
   sizes="(max-width: 100px) 92px, (max-width: 600px) 462px, 1280px" %>
-  src="/<%= locals.user.profilePictureURL %>" alt="Profile picture">
+  src="<%= locals.user.profilePictureURL %>" alt="Profile picture">
   <div class="PROFILE-INFO d-grid gap-0 gap-sm-2 <%# d-flex flex-row justify-content-around %>">
     <div class="row align-items-end">
       <div class="PROFILE-INTERESTS col d-flex flex-column align-items-center"><h3><%= locals.user.following.length %></h3><p>Interests</p></div>
@@ -41,7 +41,7 @@
 
 <main>
   <% locals.posts.forEach(post => { %>
-    <% if (post.username === locals.currentUser) { %>
+    
       <article class="POST PROFILE-POST card rounded shadow-sm">
     
         <% if (post.tags) { %>
@@ -94,7 +94,7 @@
           </div>
         </section>
       </article>
-    <% } %>
+    
   <% }) %>
     
   <div class="END-OF-FEED PROFILE-END d-block text-center my-5 py-5 mx-auto">

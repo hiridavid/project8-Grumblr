@@ -10,9 +10,9 @@
         </form>
       </div>
 
-      <form class="align-self-center" action="/profile" method="GET">
-        <img class="PROFILE-IMG HIGHLIGHT" src="/<%= locals.currentPfpURL %>" alt="profile picture" type="submit">
-      </form>
+      <a class="align-self-center" href="/u/<%= locals.currentUser %>">
+        <img class="PROFILE-IMG HIGHLIGHT" src="/<%= locals.currentPfpURL %>" alt="profile picture">
+      </a>
 
       <button class="navbar-toggler rounded-circle m-0 align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="nav>div.container-fluid div.collapse.navbar-collapse" aria-controls="nav>div.container-fluid div.collapse.navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-magnifying-glass"></i>
