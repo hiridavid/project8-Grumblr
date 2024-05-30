@@ -106,3 +106,9 @@ buglist:
   pfp click does nothing
 > nav pfp click does nothing
   all profiles look like your own
+  theme is not applied
+  can't change display name
+  can't change pfp
+  can't change theme
+  can't edit/delete posts
+  can't see/modify followers/following

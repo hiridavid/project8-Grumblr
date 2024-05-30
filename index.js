@@ -1,6 +1,8 @@
 import express from "express";
 import fs from "fs";
 import filters from "./app/filters.js"
+import editors from "./app/editors.js";
+import classes from "./app/classes.js";
 
 //deconstructing
 const {
@@ -11,6 +13,10 @@ const {
   getFilteredPosts,
   getPreparedPosts,
 } = filters;
+
+const { addUser, removeUser, editUser } = editors;
+
+const { User } = classes;
 
 //init
 const app = express();
