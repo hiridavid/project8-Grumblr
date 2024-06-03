@@ -76,8 +76,59 @@ function editUser(
   );
 }
 
+function addPost(postObj, postsArr = posts) {
+  postsArr.push(postObj);
+
+  fs.writeFileSync(
+    "./data/posts.json",
+    JSON.stringify({
+      posts: postsArr,
+    })
+  );
+}
+
+function removePost(postID, username, postsArr = posts) {
+  let notFound = true;
+  postsArr = postsArr.filter((post) => {
+    //if (correct ID & post belogs to user)
+    if (post.postID === postID && post.username === username) {
+      notFound = false;
+      return false;
+    } else return true;
+  });
+
+  if (notFound) throw Error("Post was already deleted.");
+  else
+    fs.writeFileSync(
+      "./data/posts.json",
+      JSON.stringify({
+        posts: postsArr,
+      })
+    );
+}
+
+function editPost(postID, username, postObj, postsArr = posts) {
+  for (let i = 0; i < postsArr.length; i++) {
+    if (postsArr[i].postID === postID && postsArr[i].username === username) {
+      postObj.postID = postID;
+      postsArr[i] = postObj;
+      break;
+    }
+  }
+
+  fs.writeFileSync(
+    "./data/posts.json",
+    JSON.stringify({
+      posts: postsArr,
+    })
+  );
+}
+
 export default {
   addUser,
   removeUser,
   editUser,
+  addPost,
+  removePost,
+  editPost,
 };

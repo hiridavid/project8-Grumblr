@@ -14,9 +14,10 @@ const {
   getPreparedPosts,
 } = filters;
 
-const { addUser, removeUser, editUser } = editors;
+const { addUser, removeUser, editUser, addPost, removePost, editPost } =
+  editors;
 
-const { User } = classes;
+const { User, Post } = classes;
 
 //init
 const app = express();

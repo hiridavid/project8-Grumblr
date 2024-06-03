@@ -112,3 +112,8 @@ buglist:
   can't change theme
   can't edit/delete posts
   can't see/modify followers/following
+
+TO-DO:
+  make a function for the repeated writing to users/posts json
+  make a function to sync user data and post data
+  

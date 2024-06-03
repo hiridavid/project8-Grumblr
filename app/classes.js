@@ -39,6 +39,56 @@ class User {
   }
 }
 
+class Post {
+  constructor(
+    username,
+    cardText,
+    cardTitle = "",
+    tags = [],
+    coverImageURL = "",
+    postsArr = posts,
+    usersArr = users
+  ) {
+    if (username === undefined)
+      throw new Error("'username' missing or incorrect.");
+
+    if (typeof username !== typeof "string")
+      throw new TypeError("'username' must be a string.");
+
+    if (cardText === undefined) throw new Error("'cardText' missing.");
+
+    if (typeof cardText !== typeof "string")
+      throw new TypeError("'cardText' must be a string.");
+
+    let user = getUserObj(username, usersArr);
+    if (user === undefined) throw new Error("User isn't registered.");
+
+    this.coverImageURL = coverImageURL;
+    this.cardTitle = cardTitle;
+    this.cardText = cardText;
+    this.tags = tags;
+    this.profilePictureURL = user.profilePictureURL;
+    this.username = username;
+    this.likeCounter = 0;
+    this.postID = postsArr[postsArr.length - 1].postID + 1;
+  }
+}
+
+/* class Post {
+  constructor(
+
+
+    coverImageURL
+    cardTitle = ""
+    cardText
+    tags = []
+    profilePictureURL":"/img/pfp92x92.jpg","username":"gnome-1985","likeCounter":0,"postID":0
+  ) {
+
+  };
+} */
+
 export default {
   User,
+  Post,
 };
